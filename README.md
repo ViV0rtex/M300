@@ -194,7 +194,7 @@ Applikation bauen und laufen lassen:
   docker-compose up
 Auf der lokalen Maschine zu http://localhost:5000 navigieren
 
-![htt://localhost:5000](testfall.png)
+![http://localhost:5000](/testfall.png)
 
 Volume einrichten: 
 

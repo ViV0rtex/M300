@@ -106,7 +106,7 @@ Siehe Installation
 ### Dokumentation ist als Mark-Down vorhanden
 ***
 
-Siehe https://github.com/ViV0rtex/M300-Services/LB3/README.md
+Siehe https://github.com/ViV0rtex/M300/README.md
 
 ### Markdown-Editor ausgewählt und eingerichtet
 Siehe Sublime Installation in K1->README.md
@@ -194,6 +194,8 @@ Applikation bauen und laufen lassen:
   docker-compose up
 Auf der lokalen Maschine zu http://localhost:5000 navigieren
 
+![htt://localhost:5000](testfall.png)
+
 Volume einrichten: 
 
 $ docker run --network=host -it --name c2 -v /data --rm busybox
@@ -247,23 +249,34 @@ Einzelne Datei auf dem Host einhängen:
 | docker build          | Erstellt ein Image von einem Dockerfile                                     |
 | docker commit         | Erstellt ein Image von den Änderung eines Containers                        |
 | docker history        | Zeigt die Vorgeschichte/Verlauf von einem Image an                          |
-|docker run             | Starten neuer Container (-d detach läuft im Hintergrund, -it interactive tty|
-|docker service create  | Create a new services                                                       |
-|docker ps              | List Containers                                                             |
-|docker version         | Versions info anzeigen                                                      |
-|docker restart         | Neustart                                                                    |
-|docker create          | Neuen contrianer erstellen                                                  |
-|docker search          | Dockerhub nach Images suchen                                                |
-|docker pull            | Lädt Image aus einer Repository herunter                                  |
-|-----------------------|-----------------------------------------------------------------------------|
+| docker run            | Starten neuer Container (-d detach läuft im Hintergrund, -it interactive tty|
+| docker service create | Create a new services                                                       |
+| docker ps             | List Containers                                                             |
+| docker version        | Versions info anzeigen                                                      |
+| docker restart        | Neustart                                                                    |
+| docker create         | Neuen contrianer erstellen                                                  |
+| docker search         | Dockerhub nach Images suchen                                                |
+| docker pull           | Lädt Image aus einer Repository herunter                                    |
+
+| Befehl               | Erklärung                   | Argumente                                                                         |
+|----------------------|-----------------------------|-----------------------------------------------------------------------------------|
+| Docker-compose ps    | Zeigt an was momentan läfut |                                                                                   |
+| docker-compose up    | Services starten            | -d (Service im Hintergrund laufen lassen                                          |
+| docker-compose stop  | Services stoppen            |                                                                                   |
+| docker -compose down | Container löschen           | --volumes um auch die volumes die vom Redis Container verwendet werden zu löschen |
 
 
 ### Funktionsweise getestet inkl. Dokumentation der Testfälle
 ***
 
-| Testfall                            | Erwartetes Resultat                   | Resultat                              |
-|-------------------------------------|---------------------------------------|---------------------------------------|
-| Webserer erreichbar unter Localhost | Hello World! I have been seen x times | Hello World! I have been seen 2 times |
+| Testfall                            | Erwartetes Resultat                                   | Resultat                                                                |
+|-------------------------------------|-------------------------------------------------------|-------------------------------------------------------------------------|
+| Webserer erreichbar unter Localhost | Hello World! I have been seen x times                 | Hello World! I have been seen 2 times                                   |
+| docker-compose ps                   | Redis und der Web Service läuft mti der Python app.py | Name                  Command                    State Ports
+                                                                                                -------------------------------------------------------------------
+                                                                                                composetest_redis_1   /usr/local/bin/run         Up
+                                                                                                composetest_web_1     /bin/sh -c python app.py   Up    5000->5000/tcp   |
+
 
 
 M300 - LB3 - Kriterium 4
@@ -279,7 +292,6 @@ M300 - LB3 - Kriterium 4
 1. Container laufen auf in einer V M oder auf einem dedizierten Host, um zu vermeiden, dass andere benutzer oder Services angegriffen werden können(Schadensverringerung)
 2. Images werden mit einem low priviledge User erstellt und nicht als root
 3. Pattern Based IPS einsetzen
-
 
 ### Reflexion
 ***

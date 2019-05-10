@@ -1,3 +1,87 @@
+M300 - LB3 - Kriterium 1
+===================
+
+Umgebung auf eigenem Notebook eingerichtet und funktionsfähig
+
+### VirtualBox
+***
+1. Version hier Herunterladen https://wwww.virtualbox.org/
+2. Setup 
+3. Next
+4. Install - Device Software
+5. Finish
+
+### Vagrant
+***
+1. Version hier herunterladen: https://www.vagrantup.com/downloads.html 
+2. Vagrant Setup starten
+3. Next
+4. EULA akzeptieren
+5. Next
+6. Installations-Ordner auswählen z.B. C:\HashiCorp\Vagrant\
+7. Next
+8. Install
+9. Auf Abschluss warten
+10. Finish
+
+### Visualstudio-Code / Sublime Text 3
+***
+1. Herunterladen: https://www.sublimetext.com/3
+2. Setup starten
+3. Next
+4. Installationsordner angeben
+5. Next
+6. Install
+7. Finish
+
+### Git-Client
+***
+01. Git Setup starten
+02. Installations Ordner auswählen z.B. C:\Program Files\Git
+03. Next
+04. Zu installierende Komponente auswählen:
+      Standardmässig:
+      Windows Explorer integration
+05. Git Bash Here
+06. Git GUI Here
+07. Git LFS(Large File Support)
+08. Associate .git* configuration files with the default text editor
+09. Associate .sh files to be run with Bash
+10. Next
+11. Shortcut erstellen
+12. Next
+13. default editor auswählen:
+      Sublime in meinem Fall: C:\Program Files\Sublime Text 3\sublime_text.exe
+14. Next
+15. Pfad Umgebung anpassen
+      Git from the command line and also from 3rd-party software
+16. Next
+17. SSH client auswählen welcher mit Git verwendet werden soll:
+       Use OpenSSH
+18. Next
+19. SSL Library auswählen
+       Use the OpenSSL library
+20. Next
+21. Text File line ending Behandlungo
+      Checkout Windows-stlye, commit Unix-style line endings
+      CRLF(Cross Platform project Support)
+22. Next
+23. Terminal Emulator auswählen
+    MinTTY
+24. Next
+25. Finish
+
+### SSH-Key für Client erstellt
+***
+1. Git/Terminal öffnen:  
+  >ssh-keygen -t rsa -b 4096 -C "name1.name2@domain.com" 
+
+  Bei den personal settings zu SSH und GPG keys wechseln
+  Unter title eine Bezeichnung angeben (z.B. EC_SSH_Key)
+  Datei %HOME%/.ssh/id_rsa.pub oder $HOME/.ssh/id_rsa.pub in Zwischenablage kopieren
+  Den Code auf GitHub einfügen und auf "Add SSH key" klicken
+  Der Schlüssel taucht nun in der übergeordneten Liste auf 
+
 M300 - LB3 - Kriterium 2
 ===================
 
@@ -30,17 +114,17 @@ Siehe Sublime Installation in K1->README.md
 ### Persönlicher Wissenstand im Bezug auf die wichtigsten Themen ist dokumentiert (Containerisierung / Docker, Microservices)
 ***
 
-		Containerisierung:
-			Das Ziel eines Containers ist das Isolieren einer Applikation/Dienst und dessen Abhängigkeiten in einer eigenständigen Einheit die überall laufen kann.
-			Container Maschinen nutzen alle den Kernel des Hosts und können nach belieben von anderen Maschinen isoliert werden.
-			Container vernichten die Abhängigkeit von physischer Hardware, und erlauben es die Rechenressourcen effizienter zu nutzen, bezogen auf Energie Konsum und Kosten Effektivität.
-			Container belaufen auf  dem OS Level/Ring
+    Containerisierung:
+		Das Ziel eines Containers ist das Isolieren einer Applikation/Dienst und dessen Abhängigkeiten in einer eigenständigen Einheit die überall laufen kann.
+		Container Maschinen nutzen alle den Kernel des Hosts und können nach belieben von anderen Maschinen isoliert werden.
+		Container vernichten die Abhängigkeit von physischer Hardware, und erlauben es die Rechenressourcen effizienter zu nutzen, bezogen auf Energie Konsum und Kosten Effektivität.
+		Container belaufen auf  dem OS Level/Ring.
 		
 			
 		Microservices- aka Mircroservice Infrastruktur -Ist eine Software Architektur von einer Sammlung an Diensten, welche folgende Eigenschaften besitzen:
-		-Einzeln
-		Service Oriented Archtiecture(SOA)
-		Software development Technique
+		-Ist einzeln
+		-Ist eine Service Oriented Archtiecture(SOA)
+		-Ist eine effektive Software-Entwicklungs Methode
     
 M300 - LB3 - Kriterium 3
 ===================
